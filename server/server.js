@@ -35,6 +35,16 @@ app.get('/activities', function(req, res) {
     res.send(activities);
 });
 
+// Endpoint
+// POST /activities
+// Create a new activity
+// and add it to our activities array
+app.post('/activities', function(req, res){
+    let newActivity = null;
+    activities.push(newActivity);
+    res.send(newActivity);
+})
+
 
 // Listen for requests
 const port = 3000;
