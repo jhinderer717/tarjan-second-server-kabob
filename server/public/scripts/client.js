@@ -37,4 +37,23 @@ function onReady(){
         console.log('Something bad happened!', errorInfo);
         alert("Server is down, try again later");
     }); // end of AJAX .then()
+
+
+
+
+
+    // Handle new activity form
+    $(document).on('click', '#submitBtn', onSubmit);
+
+
 } // end onReady
+
+
+function onSubmit() {
+    let newActivity = {
+        activity: $('#activityInput').val(),
+        type: $('#typeInput').val(),
+        isScreentime: $('#isScreenTime').is(':checked')
+    };
+    console.log('new activity', newActivity);
+}
