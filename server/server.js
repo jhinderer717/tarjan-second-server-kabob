@@ -40,10 +40,10 @@ app.get('/activities', function(req, res) {
 // Create a new activity
 // and add it to our activities array
 app.post('/activities', function(req, res){
-    let newActivity = null;
+    let newActivity = null;         // TODO
     activities.push(newActivity);
     res.send(newActivity);
-})
+});
 
 
 // Listen for requests
