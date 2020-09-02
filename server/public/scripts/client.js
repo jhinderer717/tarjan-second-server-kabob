@@ -18,7 +18,8 @@ function onReady(){
 
     // AJAX!!!!!!!!
     $.ajax({
-        url: '/activities'
+        url: '/activities',
+        method: 'GET'
     }).then(function(activities){
         console.log("We got a response!", activities);
 
@@ -32,5 +33,8 @@ function onReady(){
             </tr>
             `);
         } // end of for loop
+    }).catch(function(errorInfo){
+        console.log('Something bad happened!', errorInfo);
+        alert("Server is down, try again later");
     }); // end of AJAX .then()
 } // end onReady
