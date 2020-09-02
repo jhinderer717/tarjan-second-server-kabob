@@ -12,22 +12,22 @@ app.use(express.static('server/public'));
 let activities = [
     {
         activity: "Typing practice",
-        isScreentime: true,
+        isScreenTime: true,
         type: "Mind Exercises"
     },
     {
         activity: "Bike around the lake",
-        isScreentime: false,
+        isScreenTime: false,
         type: "Body Break"
     },
     {
         activity: "FB chat with a friend",
-        isScreentime: true,
+        isScreenTime: true,
         type: "Social"
     }
 ];
 
-// Endpoint:
+// Endpoint (aka "route")
 // GET /activities
 // Respond with a list of activities
 app.get('/activities', function(req, res) {
