@@ -16,6 +16,20 @@ function onReady(){
     */
     //let activities = ???;
 
+    
+
+
+    refreshActivities();
+
+
+    // Handle new activity form
+    $(document).on('click', '#submitBtn', onSubmit);
+
+
+} // end onReady
+
+
+function refreshActivities() {
     // AJAX!!!!!!!!
     $.ajax({
         url: '/activities',
@@ -24,6 +38,7 @@ function onReady(){
         console.log("We got a response!", activities);
 
         // Render activities
+        $('tbody').empty();
         for (let activity of activities) {
             $('tbody').append(`
             <tr>
@@ -37,23 +52,32 @@ function onReady(){
         console.log('Something bad happened!', errorInfo);
         alert("Server is down, try again later");
     }); // end of AJAX .then()
-
-
-
-
-
-    // Handle new activity form
-    $(document).on('click', '#submitBtn', onSubmit);
-
-
-} // end onReady
+}
 
 
 function onSubmit() {
     let newActivity = {
         activity: $('#activityInput').val(),
-        type: $('#typeInput').val(),
-        isScreentime: $('#isScreenTime').is(':checked')
+        type: $('#activityType').val(),
+        isScreenTime: $('#isScreenTimeInput').is(':checked')
     };
     console.log('new activity', newActivity);
+
+
+
+
+    // Post /activities
+    // with our newActivity object
+    $.ajax({
+        url: '/activities',
+        method: 'POST',
+        data: newActivity
+    }).then(function(response){
+        console.log('Created an activity', response);
+
+        console.log('time to refresh');
+        refreshActivities();
+    }).catch(function(errorInfo){
+        console.log('ruh-roh', errorInfo);
+    });
 }
