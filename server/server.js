@@ -41,6 +41,8 @@ app.get('/activities', function(req, res) {
 // and add it to our activities array
 app.post('/activities', function(req, res){
     let newActivity = null;         // TODO
+
+    // Add the new activity to our list of activities
     activities.push(newActivity);
     res.send(newActivity);
 });
