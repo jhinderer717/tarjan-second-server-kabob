@@ -1,0 +1,23 @@
+{
+  "name": "tarjan-second-server-kabob",
+  "version": "1.0.0",
+  "description": "It's gonna be great.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhinderer717/tarjan-second-server-kabob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhinderer717/tarjan-second-server-kabob/issues"
+  },
+  "homepage": "https://github.com/jhinderer717/tarjan-second-server-kabob#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
