@@ -15,7 +15,7 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Use our activitiies router from ./activities.js
-app.use('/', activitiesRouter);
+app.use('/activities', activitiesRouter);
 
 // Listen for requests
 const port = 3000;

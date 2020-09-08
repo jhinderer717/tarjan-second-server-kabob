@@ -1,4 +1,4 @@
-const activities = require('./data.js');
+const activities = require('./data/activities.js');
 const express = require('express');
 
 // create a router for activities
@@ -7,7 +7,7 @@ const router = express.Router();
 // Endpoint (aka "route")
 // GET /activities
 // Respond with a list of activities
-router.get('/activities', function(req, res) {
+router.get('/', function(req, res) {
     // Send back the array of activities
     res.send(activities);
 });
@@ -16,7 +16,7 @@ router.get('/activities', function(req, res) {
 // POST /activities
 // Create a new activity
 // and add it to our activities array
-router.post('/activities', function(req, res){
+router.post('/', function(req, res){
     console.log('I got a new request!', req.body);
     let newActivity = req.body;
 
