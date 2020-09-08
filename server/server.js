@@ -1,7 +1,7 @@
 // Const 
 const express = require('express');
 const bodyParser = require('body-parser');
-const activitiesRouter = require('./activities');
+const activitiesRouter = require('./routers/activities');
 
 console.log('Look I am a server!');
 

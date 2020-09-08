@@ -1,4 +1,4 @@
-const activities = require('./data/activities.js');
+const activities = require('../data/activities.js');
 const express = require('express');
 
 // create a router for activities
