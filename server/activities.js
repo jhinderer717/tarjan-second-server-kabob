@@ -20,10 +20,10 @@ router.post('/activities', function(req, res){
     console.log('I got a new request!', req.body);
     let newActivity = req.body;
 
-    /*if(newActivity === undefined){
+    if(newActivity === undefined){
         res.sendStatus(404);
-        return false
-    }*/
+        return false;
+    }
 
     // Add the new activity to our list of activities
     activities.push(newActivity);
