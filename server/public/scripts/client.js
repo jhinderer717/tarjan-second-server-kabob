@@ -5,26 +5,10 @@ $(document).ready(onReady);
 function onReady(){
     console.log('I am ready');
 
-
-    /* Activity data looks like
-    
-    {
-        activity: "Typing practice",
-        isScreentime: true,
-        type: "Mind Exercises"
-    },
-    */
-    //let activities = ???;
-
-    
-
-
     refreshActivities();
-
 
     // Handle new activity form
     $(document).on('click', '#submitBtn', onSubmit);
-
 
 } // end onReady
 
@@ -62,9 +46,6 @@ function onSubmit() {
         isScreenTime: $('#isScreenTimeInput').is(':checked')
     };
     console.log('new activity', newActivity);
-
-
-
 
     // Post /activities
     // with our newActivity object
